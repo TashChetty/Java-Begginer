@@ -8,6 +8,7 @@ package ex04_1_exercise;
  *
  * @author ChettyNa
  */
+ //exercises
 public class ShoppingCart {
 //  1.  Declare and initialize 2 String variables: custName and itemDesc
 //2.  Declare a String variable called message.  Do not initialize it.

@@ -1,10 +1,15 @@
 package Book3.chapter5;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
 public class TickTock {
     public static void main(String[] args) {
         // create a timer that calls the Ticker class
         // at one second intervals
-        Timer t = new Timer(1000, new Ticker());
+        Timer t = new Timer(1000, (ActionListener) new Ticker());
         t.start();
         // display a message box to prevent the
         // program from ending immediately
@@ -16,12 +21,18 @@ public class TickTock {
 class Ticker implements ActionListener {
     private boolean tick = true;
 
-    public void actionPerformed(ActionEvent event) {
+    public void actionPerformed(Action event) {
         if (tick) {
             System.out.println("Tick...");
         } else {
             System.out.println("Tock...");
         }
         tick = !tick;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }

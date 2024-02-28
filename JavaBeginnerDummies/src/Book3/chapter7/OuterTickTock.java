@@ -3,12 +3,8 @@ package Book3.chapter7;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JOptionPane;
-import javax.swing.Timer;
-
-import javax.swing.JOptionPane;
-
-public class OuterTickTock {
+public class OuterTickTock
+{
     private String tickMessage = "Tick...";
     private String tockMessage = "Tock...";
 
@@ -17,10 +13,11 @@ public class OuterTickTock {
         t.go();
     }
 
-    private void go() {
+    private void go()
+    {
         // create a timer that calls the Ticker class
         // at one second intervals
-        Timer t = new Timer(1000, new InnerTicker());
+        Timer t = new Timer(1000, new InnerTicker() );
         t.start();
 
         // display a msg box to prevent program from ending immediately
@@ -28,11 +25,14 @@ public class OuterTickTock {
         System.exit(0);
     }
 
-    class InnerTicker implements ActionListener {
+    class InnerTicker implements ActionListener
+    {
         private boolean tick = true;
 
-        public void actionPerformed(ActionEvent event) {
-            if (tick) {
+        public void actionPerformed(ActionEvent event)
+        {
+            if (tick)
+            {
                 System.out.println(tickMessage);
             } else {
                 System.out.println(tockMessage);

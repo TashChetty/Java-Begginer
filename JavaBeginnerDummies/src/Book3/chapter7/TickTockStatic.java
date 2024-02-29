@@ -1,17 +1,20 @@
 package Book3.chapter7;
 
-public class TickTockStatic
-{
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class TickTockStatic {
     private static String tickMessage = "Tick...";
     private static String tockMessage = "Tock...";
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         TickTockStatic t = new TickTockStatic();
         t.go();
     }
-    private void go()
-    {
+
+    private void go() {
         // create a timer that calls the Ticker class
         // at one second intervals
         Timer t = new Timer(1000, new Ticker());
@@ -22,18 +25,15 @@ public class TickTockStatic
                 "Click OK to exit program");
         System.exit(0);
     }
-    static class Ticker implements ActionListener
-    {
+
+    static class Ticker implements ActionListener {
         private boolean tick = true;
+
         public void actionPerformed(
-            ActionEvent event)
-        {
-            if (tick)
-            {
+                ActionEvent event) {
+            if (tick) {
                 System.out.println(tickMessage);
-            }
-            else
-            {
+            } else {
                 System.out.println(tockMessage);
             }
             tick = !tick;

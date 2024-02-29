@@ -1,8 +1,10 @@
 package Book;
 
+import java.util.LinkedList;
+
 public class GenQueue<E>
 {
-    private LinkedList<E> list = new LinkedList<E>();	
+    private LinkedList<E> list = new LinkedList<E>();
 
     public void enqueue(E item)	
     {

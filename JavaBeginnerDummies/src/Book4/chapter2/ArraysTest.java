@@ -1,4 +1,4 @@
-package chapter2;
+package Book4.chapter2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,9 +9,9 @@ public class ArraysTest {
         ArrayList<String> myArrayList = new ArrayList<String>();
 
         int[] startValues = new int[100];
-        Arrays.fill(startValues, (int) (Math.random() * 100) + 1);
+        Arrays.fill(startValues, (int)(Math.random() * 100) + 1);
 
-        for (int i : startValues) {
+        for (int i: startValues) {
             System.out.println(i);
         }
     }

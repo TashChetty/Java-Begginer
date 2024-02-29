@@ -4,9 +4,9 @@ public class TestEqualityCloning {
 
     public static void main(String[] args) {
         // EQUALITY TEST
-        Employee emp1 = new Employee("Mark", "Drinkwater");
-        Employee emp2 = new Employee("Mark", "Drinkwater");
-        Worker wrk = new Worker("Mark", "Drinkwater");
+        Employee emp1 = new Employee("Natasha", "Chetty");
+        Employee emp2 = new Employee("Natasha", "Chetty");
+        Worker wrk = new Worker("Natasha", "Chetty");
 
         System.out.println("Are emp1 and emp1 equal? " + emp1.equals(emp1));
         System.out.println("Are emp1 and emp2 equal? " + emp1.equals(emp2));

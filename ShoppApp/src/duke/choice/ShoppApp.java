@@ -43,10 +43,10 @@ public class ShoppApp {
 
         //Ex 3.2
         double tax = 0.2;
-        double total;
+        double total = 0;
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
-        Clothing[]items = {item1, item2}; // ex4.2
+        Clothing[]items = {item1, item2, new Clothing(), new Clothing()}; // ex4.2
         
         item1.description = "Blue Jacket";
         item1.price = 20.9;
@@ -56,12 +56,30 @@ public class ShoppApp {
         item2.price =10.5 ;
         item2.size = "S";
         
+        items[2].description = "Green Scarf";
+        items[2].price = 5.0 ;
+        items[2].size = "S";
         
-        System.out.println("Item1: " + item1.description + "," + item1.price + ","+ item1.size);
-        System.out.println("Item2: " + item2.description + "," + item2.price + "," + item2.size);
+        items[3].description = "Blue T-shirt";
+        items[3].price = 10.5 ;
+        items[3].size = "S";
         
-        total = ((item2.price * 2)+ item1.price)*(1 + tax);
-        System.out.println("The total price incl tax is: "+total);
+        //System.out.println("Item1: " + item1.description + "," + item1.price + ","+ item1.size); //this is used for ex3.2
+        //System.out.println("Item2: " + item2.description + "," + item2.price + "," + item2.size); //this is used for ex3.2
+        
+        for(Clothing item : items){
+         if(c1.size.equals(item.size)){
+             total = total + item.price;
+            System.out.println("Item: " + item.description + "," + item.price + ","+ item.size);
+            if(total>15){break;}
+        }
+         //   total = total + item.price;
+   
+         //   System.out.println("Item: " + item.description + "," + item.price + ","+ item.size);
+        }
+        
+       // total = ((item2.price * 2)+ item1.price)*(1 + tax); // this is used for ex3.2
+        System.out.println("The total price is: "+total);
 
 
     }

@@ -19,27 +19,10 @@ public class ShoppApp {
 
         //Ex3.1
         Customer c1 = new Customer();
-        c1.name = "Pinky";
-        System.out.println("Welcome " + c1.name);
+        c1.setName("Pinky");
+        System.out.println("Welcome " + c1.getName() + "," + c1.getSize());
 
-        //ex 4.1
-        c1.size = "S";
-        int measurement = 3;
-        System.out.println(c1.name + "'s " + "size is " + c1.size);
-
-        switch (measurement) {
-            case 1, 2, 3:
-                c1.size = "S";
-                break;
-            case 4, 5, 6:
-                c1.size = "M";
-                break;
-            case 7, 8, 9:
-                c1.size = "L";
-                break;
-            default:
-                c1.size = "X";
-        }
+       
 
         //Ex 3.2
         double tax = 0.2;
@@ -48,30 +31,36 @@ public class ShoppApp {
         Clothing item2 = new Clothing();
         Clothing[]items = {item1, item2, new Clothing(), new Clothing()}; // ex4.2
         
-        item1.description = "Blue Jacket";
-        item1.price = 20.9;
-        item1.size = "M";
+        item1.setDescription("Blue Jacket");
+        item1.setPrice(20.9);
+        item1.setSize("M");
         
-        item2.description = "Orange T-shirt";
-        item2.price =10.5 ;
-        item2.size = "S";
+        item2.setDescription("Orange T-shirt");
+        item2.setPrice(10.5) ;
+        item2.setSize("S");
         
-        items[2].description = "Green Scarf";
-        items[2].price = 5.0 ;
-        items[2].size = "S";
+        items[2].setDescription("Green Scarf");
+        items[2].setPrice(5.0) ;
+        items[2].setSize("S");
         
-        items[3].description = "Blue T-shirt";
-        items[3].price = 10.5 ;
-        items[3].size = "S";
+        items[3].setDescription("Blue T-shirt");
+        items[3].setPrice(10.5) ;
+        items[3].setSize("S");
         
         //System.out.println("Item1: " + item1.description + "," + item1.price + ","+ item1.size); //this is used for ex3.2
         //System.out.println("Item2: " + item2.description + "," + item2.price + "," + item2.size); //this is used for ex3.2
-        
-        for(Clothing item : items){
-         if(c1.size.equals(item.size)){
-             total = total + item.price;
-            System.out.println("Item: " + item.description + "," + item.price + ","+ item.size);
-            if(total>15){break;}
+        //ex 4.1
+        c1.setSize("S");
+        int measurement = 8;
+       c1.addItems(items);
+
+       c1.setSize(measurement); 
+        System.out.println("Welcome " + c1.getName() + "," + c1.getSize()+ "." + c1.getTotalClothingCost());
+        for(Clothing item : c1.getItems()){
+       System.out.println("Items: " + item.getDescription());
+            
+           // System.out.println("Item: " + item.getDescription() + "," + item.getPrice() + ","+ item.getSize());
+     
         }
          //   total = total + item.price;
    
@@ -79,9 +68,9 @@ public class ShoppApp {
         }
         
        // total = ((item2.price * 2)+ item1.price)*(1 + tax); // this is used for ex3.2
-        System.out.println("The total price is: "+total);
+        
 
 
     }
 
-}
+
